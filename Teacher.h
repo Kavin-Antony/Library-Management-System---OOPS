@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <Book.h>
-#include <User.h>
+#include "Book.h"
+#include "User.h"
 
 using namespace std;
 
@@ -11,7 +11,9 @@ class Teacher : public User{
         const int maxBooks = 5;
     
     public:
-        void displayUserInfo() override;
-        void borrowBook(Book& book) override;
-        void returnBook(Book& book) override;
+        Teacher(string name, string userId);
+
+        void displayUserInfo() const override;
+        bool borrowBook(Book& book) override;
+        bool returnBook(Book& book) override;
 };

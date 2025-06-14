@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <Book.h>
-#include <User.h>
+#include "Book.h"
+#include "User.h"
 
 using namespace std;
 
@@ -12,12 +12,13 @@ class Library{
         vector<User*> users;
 
     public:
-        void addBook(Book book);
-        void addUser(User* user);
-        Book* searchBookISBN(string isbn);
+        bool addBook(string title, string author, string isbn);
+        bool addUser(string name, string userId, string userType);
+        Book* searchBookByISBN(string isbn);
         User* searchUserById(string userId);
-        void issueBook(string userId, string isbn);
-        void returnBook(string userId, string isbn);
+        bool issueBook(string userId, string isbn);
+        bool returnBook(string userId, string isbn);
         void displayAllBooks();
         void displayAllUsers();
+        ~Library();
 };

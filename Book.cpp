@@ -11,7 +11,7 @@ Book::Book(string title, string author, string isbn){
     this->isAvailable = true;
 }
 
-void Book::displayDetails(){
+void Book::displayDetails() const{
     cout << "Title: " << title << endl;
     cout << "Author: " << author << endl;
     cout << "ISBN: " << isbn << endl;
@@ -23,9 +23,9 @@ void Book::borrowBook(){
         isAvailable = false;
         cout << "'" << title << "' " << "has been borrowed." << endl;
     }
-    else{
-        cout << "'" << title << "' " << "has already borrowed." << endl;
-    }
+    // else{
+    //     cout << "'" << title << "' " << "has already borrowed." << endl;
+    // }
 }
 
 void Book::returnBook(){
@@ -33,9 +33,9 @@ void Book::returnBook(){
         isAvailable = true;
         cout << "'" << title << "' " << "has been returned." << endl;
     }
-    else{
-        cout << "'" << title << "' " << "is already available." << endl;
-    }
+    // else{
+    //     cout << "'" << title << "' " << "is already available." << endl;
+    // }
 }
 
 string Book::getISBN() const{

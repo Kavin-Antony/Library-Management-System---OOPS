@@ -13,7 +13,7 @@ class Book
     public:
          Book(std::string title, std::string author, std::string isbn);
 
-        void displayDetails();
+        void displayDetails() const;
         void borrowBook();
         void returnBook();
         string getISBN() const;

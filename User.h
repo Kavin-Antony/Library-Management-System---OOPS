@@ -1,19 +1,22 @@
 #pragma once
 #include <string>
-#include <Book.h>
+#include "Book.h"
 #include <vector>
 
 using namespace std;
 
 class User{
-    private:
+    protected:
         string name;
         string userId;
-        vector<string> borrowBooks;
+        vector<Book*> borrowedBooks;
     
     public:
-        virtual void displayUserInfo() = 0;
-        virtual void borrowBook(Book& book) = 0;
-        virtual void returnBook(Book& book) = 0;
+        User(string name, string userId);
+
+        virtual void displayUserInfo() const = 0;
+        virtual bool borrowBook(Book& book) = 0;
+        virtual bool returnBook(Book& book) = 0;
         string getUserId();
+        virtual ~User();
 };
